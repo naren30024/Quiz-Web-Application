@@ -1,0 +1,567 @@
+*{
+    scroll-behavior: auto;
+}
+
+.pyth{
+    background: url("D:\reac\reactfirst\src\images\qizbg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100vw;
+    height: 200vh;
+    display: flex;
+    justify-content: center;
+    /*flex-direction: column;*/
+        
+}
+.top{
+    height: 50%;
+    color:white;
+    justify-content: left;
+    position: relative;
+    
+}
+.timer{
+    width: 20%;
+    height: 20%;
+    color: white;
+    border-radius: 40%;
+    border: 5px solid white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: 500;
+    position: absolute;
+    bottom: 50px;
+    left: 20px;
+}
+.bottom{
+    height: 50%;
+    color: aqua;
+    
+}
+.trivia{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+.question{
+    width: 100%;
+    background-color: black ;
+    border: 2px solid white;
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+
+}
+.answers{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.answer{
+    width: 40%;
+    padding: 10px;
+    text-align: center;
+    background: black;
+    border: 1px solid white;
+    border-radius: 20px;
+    font-weight: 300;
+    margin: 0 10px 20px 10px;
+
+
+}
+.answer:hover,
+.answer.active{
+    background-color: blue;
+    cursor: pointer;
+}
+.answer.correct{
+    animation: correct 1s ease forwards;
+}
+@keyframes correct {
+    0%,22%,42%{
+        background: blue;
+    }
+    50%,
+    65%,
+    100%{
+        background-color: green;
+    }
+    
+}
+.answer.wrong{
+    animation: wrong 1s ease forwards;
+}
+@keyframes wrong {
+    0%,22%,42%{
+        background: blue;
+    }
+    50%,
+    65%,
+    100%{
+        background-color: crimson;
+    }
+}
+.AppBar{
+    text-align: center;
+}
+
+a{
+    
+    text-decoration: none;
+}
+/*a:hover{
+    width: 40px;
+    background-color: black;
+    border-radius: 3px;
+    transform: scaleX(5);
+    
+}*/
+ul{
+    display: flex;
+}
+li{
+    padding: 10px;
+    padding-top: 30px;
+    list-style-type: none;
+}
+.score{
+    padding-top: 10px;
+    padding-left: 50%;
+}
+.subjects{
+    text-align: center;
+    padding-top: 80px;
+
+}
+.subject{
+    border-radius: 20px;
+    border:10px solid black;
+    font-size: 30px;
+    cursor: pointer;
+    text-decoration: none;
+
+}
+.python{
+    background-image: url("https://media.istockphoto.com/id/1364859722/photo/artificial-intelligence-concept.jpg?b=1&s=170667a&w=0&k=20&c=eHRkMLmlR79tWkAuR0_eJCerG4xNP7iPMgjqE3mzbZU=");
+}
+.dms{
+    background-image: url("D:\reac\reactfirst\src\images\dms12.jpeg");
+}
+.cn{
+    background-image: url("https://www.tutorialspoint.com/basics_of_computer_science/images/computer_networking.jpg");
+}
+.se{
+    background-image: url("https://st2.depositphotos.com/1012331/6525/i/600/depositphotos_65256265-stock-photo-engineering-designing-communications-connection-technologies.jpg");
+}
+.cd{
+    background-image: url("https://img.brainkart.com/subject/386.jpg");
+}
+.da{
+    background-image: url("https://www.simplilearn.com/ice9/free_resources_article_thumb/Business_Analytics_vs_Data_Analytics.jpg");
+}
+.ds{
+    background-image: url("D:\reac\reactfirst\src\images\dsa12.jpeg");
+}
+.coa{
+    background-image: url("D:\reac\reactfirst\src\images\coa1.jpg");
+}
+.os{
+    background-image: url("D:\reac\reactfirst\src\images\os2.jpg");
+}
+.oop{
+    background-image: url("D:\reac\reactfirst\src\images\oop2.jpg");
+}
+.dbms{
+    background-image: url("D:\reac\reactfirst\src\images\dbms.jpg");
+}
+.cg{
+    background-image: url("D:\reac\reactfirst\src\images\cg1.jpg");
+}
+.daa{
+    background-image: url("D:\reac\reactfirst\src\images\daa.jpg");
+}
+.wt{
+    background-image: url("D:\reac\reactfirst\src\images\wt3.jpg");
+}
+.flat{
+    background-image: url("D:\reac\reactfirst\src\images\flat2.jpg");
+    border-radius: 10px solid black;
+}
+.ml{
+    background-image: url("D:\reac\reactfirst\src\images\ml.jpg");
+}
+.ai{
+    background-image: url("D:\reac\reactfirst\src\images\ai1.jpg");
+}
+.cns{
+    background-image: url("D:\reac\reactfirst\src\images\cns.jpg");
+}
+.endText{
+    position: relative;
+    top:0;
+    bottom:0;
+    left: 0;
+    right: 0;
+    margin:auto;
+    color: coral;
+}
+.result{
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-top: 40%;
+    padding-bottom: 50%;
+}
+.quit{
+    width: 50%;
+    height: 50px;
+    background-color: brown;
+    color: white;
+    border-radius: 10%;
+    border: 5px solid white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: 500;
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    cursor: pointer;
+}
+.homeb{
+    background-color: blueviolet;
+    border: 5px solid black;
+    border-radius: 10%;
+    width: 50%;
+    margin-top: 10%;
+    justify-content: center;
+    font-size: 30px;
+    text-decoration: none;
+}
+Link{
+    text-decoration: none;
+}
+.ava{
+    margin-top: 50px;
+}
+.ico{
+    width: 100px;
+    height: 100px;
+}
+.cont{
+    align-items: center;
+    justify-content: center;
+    background-color: bisque;
+    opacity: 0.6;
+}
+.quizin{
+    background: url("D:\reac\reactfirst\src\images\quizinh.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    background-attachment: fixed;
+
+}
+.wrapper {
+    height: 100%;
+    font-family: Helvetica, sans-serif;
+    line-height: 1.5;
+    word-spacing: 2px;
+    letter-spacing: 0.5px;
+  }
+  .fixed {
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    height: 100%;
+    width: 100%;
+  }
+  /*.fixed h2 {
+    display: table-cell;
+    vertical-align: middle;
+  }*/
+  .scroll {
+    background-color: #ffe0f6;
+    padding: 10px 70px;
+    color: #666666;
+  }
+  .add{
+    padding-left: 37%;
+    padding-top: 5%;
+    padding-right: 30%;
+    
+    
+  }
+  .sub{
+    
+    vertical-align: middle;
+    padding: 20% 20% 20% 20%;
+
+  }
+  .questions{
+    padding-left: 10%;
+  }
+  .q1{
+    padding: 7px;
+    width: 100%;
+  }
+  .sub{
+    background-repeat: no-repeat;
+    scroll-behavior: unset;
+
+  }
+  input{
+    border-radius: 5%;
+  }
+  .subadd{
+    margin-right: 20%;
+    padding-right: 10%;
+  }
+  label{
+    color: blue;
+  }
+  
+ 
+  #select-box{
+    height:40px;
+    overflow-y:auto;
+      width: 250px;
+  }
+  option{
+    overflow-y: scroll;
+  }
+  table{
+    margin-top: 70px;
+  }
+/*@media (min-width: 720px) {
+    .pyth{
+        background: url("https://sklc-tinymce-2021.s3.amazonaws.com/comp/2022/03/Rise%20of%20Python%20for%20Embedded%20Systems%201_1648655487.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 100vh;
+        display: flex;
+    }
+    .main{
+        font-size: 100px;
+    }
+            
+}*/
+@media (min-width: 768px) {
+    .pyth{
+        background: url("https://sklc-tinymce-2021.s3.amazonaws.com/comp/2022/03/Rise%20of%20Python%20for%20Embedded%20Systems%201_1648655487.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 100vh;
+    }
+    .trivia{
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+    }
+    .question{
+        width: 100%;
+        background-color: black ;
+        border: 2px solid white;
+        text-align: center;
+        padding: 20px;
+        border-radius: 10px;
+    
+    }
+    .answers{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    .answer{
+        width: 100%;
+        padding: 10px;
+        text-align: center;
+        background: black;
+        border: 1px solid white;
+        border-radius: 20px;
+        font-weight: 300;
+        margin: 0 10px 20px 10px;
+        cursor: pointer;
+    
+    
+    }
+            
+}
+@media (min-width: 320px) {
+    .subjects{
+        text-align: center;
+        padding-top: 80px;
+    
+    }
+    .quit{
+        bottom: 20%;
+    }
+    .top{
+        height: 40%;
+        color:red;
+        justify-content: left;
+        
+    }
+    .timer{
+        
+        bottom: 20%;
+        border:5px solid white;
+        color: white;
+        font-size: 30px;
+    }
+    .bottom{
+        height: 60%;
+        color: aqua;
+    }
+    .pyth{
+        background: url("D:\reac\reactfirst\src\images\qizbg.jpg");
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 100vh;
+        background-attachment: fixed;
+        background-clip: border-box;
+    }
+    .question{
+        width: 100%;
+    }
+    .answers{
+        justify-content: center;
+        display: block;
+        padding-left: 50px;
+        padding-top: 10px;
+    }
+    .answer{
+        width: 70%;
+    }
+    .score{
+        padding-left: 50%;
+    }
+    h3{
+        width: 50px;
+        height: 50px;
+        background-color:black;
+        border-radius: 100%;
+        text-align: center;
+    }
+    a{
+        color: white;
+        text-decoration: none;
+    }
+    .os{
+        margin-right: 5px;
+    }
+
+            
+}
+@media (min-width: 1024px) {
+    .subjects{
+        text-align: center;
+        justify-content: space-around;
+        padding-top: 80px;
+        padding-left: 0px;
+    
+    }
+    .top{
+        height: 50%;
+    }
+    .timer{
+        bottom: 20px;
+        height: 13%;
+        width: 10%;
+        left: 10%;
+    }
+    .quit{
+        width: 25%;
+        top:80%;
+        left:70%;
+    }
+    .bottom{
+        height: 50%;
+    }
+    .pyth{
+        background: url("D:\reac\reactfirst\src\images\qizbg.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 100vh;
+    }
+    .trivia{
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+    }
+    .question{
+        width: 1000px;
+        background-color: black ;
+        border: 2px solid white;
+        text-align: center;
+        padding: 20px;
+        border-radius: 10px;
+        font-size: 20px;
+    
+    }
+    .answers{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    .answer{
+        width: 40%;
+        padding: 10px;
+        text-align: center;
+        background: black;
+        border: 1px solid white;
+        border-radius: 20px;
+        font-weight: 300;
+        margin: 0 10px 20px 10px;
+        font-size: 20px;
+    
+    
+    }
+    .questions{
+        padding-left: 30%;
+        padding-right: 20%;
+    }
+    .score{
+        padding-left: 70%;
+        font-size: 40px;
+    }
+    .subjects{
+        display: flex;
+        flex-direction: 0 0 auto;
+    }
+    .subject{
+        padding: 10px;
+
+    }
+    .cont{
+        margin-left: 20%;
+        align-items: center;
+        justify-content: center;
+        background-color: aqua;
+    }
+    .add{
+        padding-left: 32%;
+        padding-top: 5%;
+        padding-right: 30%;
+        
+        
+      }
+            
+}
