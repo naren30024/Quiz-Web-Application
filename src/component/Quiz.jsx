@@ -2,16 +2,19 @@ import React, { useCallback, useEffect }  from "react";
 import { useState } from "react";
 import "./pyth.css"
 import ResponsiveAppBar from "./Appbar";
-//import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import Timer from "./timer";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import HomeIcon from '@mui/icons-material/Home';
 import { Avatar, useEventCallback } from "@mui/material";
 import { LaptopWindows } from "@mui/icons-material";
 import axios from "axios";
 import QuesandAns from "./QuestionAnswer";
 
-function Quiz({subj,attempt}){
+function Quiz(){
+    
+    const location = useLocation();
+    const dashboardData = location.state || {}
+    console.log(dashboardData);
     const [questionNumber, setQuestionNumber]= useState(1);
     const [stop, setStop] = useState(false);
     //const [className,setClassName]=useState();
@@ -19,32 +22,31 @@ function Quiz({subj,attempt}){
     let [score,setScore]= useState(0);
     const [nQuestions, setNquestions] = useState(0);
     const [option, setOption] = useState(true);
-    //let [data, setData] = useState();
     
-    let hell=JSON.parse(localStorage.getItem("datas"));
     
-    let emai={
-        "email":hell[2]
-    }
+    // let hell=JSON.parse(localStorage.getItem("datas"));
+    
+    
+    
     let subn;
-    axios.post('http://localhost/php-react/register-login-php/letscore.php',emai).then((result)=>{
+    axios.post('http://localhost/php-react/register-login-php/letscore.php',dashboardData.Logindata.email).then((result)=>{
         console.log(result.data);
         
-        localStorage.setItem("scoree",JSON.stringify(result.data.score))
-        localStorage.setItem("attempts",JSON.stringify(result.data.attempts))
+        // localStorage.setItem("scoree",JSON.stringify(result.data.score))
+        // localStorage.setItem("attempts",JSON.stringify(result.data.attempts))
     })
     
     let scores={
-        "attempts":attempt+Number(JSON.parse(localStorage.getItem("attempts"))),
-        "score":score +Number(JSON.parse(localStorage.getItem("scoree"))),
-        "email":hell[2]
+        "attempts":dashboardData.Logindata.attempts,//attempt+Number(JSON.parse(localStorage.getItem("attempts"))),
+        "score":dashboardData.Logindata.score,//score +Number(JSON.parse(localStorage.getItem("scoree"))),
+        "email":dashboardData.Logindata.email
     }
     let data;
     let [add,setAdd] = useState();
     //localStorage.setItem("data",[JSON.stringify(data)]);
     //console.log(subj);
     
-    switch(subj){
+    switch(dashboardData.subject){
         case "OS":
             subn={"subject":"os"}
             axios.post('http://localhost/php-react/register-login-php/quest.php',subn).then((result)=>{
@@ -292,9 +294,9 @@ function Quiz({subj,attempt}){
         }
     }
     
-    const Home1 = () =>{
-        window.location.reload();
-    }
+    // const Home1 = () =>{
+    //     window.location.reload();
+    // }
     
     
     
@@ -318,9 +320,9 @@ function Quiz({subj,attempt}){
                               </lord-icon>
                               <h1 className="endText">Your Score is : {score} outof {nQuestions}</h1>
                               <div className="homeb">
-                                <div onClick={Home1}>
+                                <div>
                                     <lord-icon src="https://cdn.lordicon.com/gmzxduhd.json" ></lord-icon>
-                                    <Link style={{ textDecoration: 'none' }}>Home</Link>
+                                    <Link to="/home" style={{ textDecoration: 'none' }}>Home</Link>
                                     
                                 </div>
                                 <div>
