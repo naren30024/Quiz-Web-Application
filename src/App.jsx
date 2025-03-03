@@ -10,6 +10,7 @@ import Quiz from './component/Quiz';
 import QuesandAns from './component/QuestionAnswer';
 import Scorecard from './component/scorecard';
 import Addquestion from './component/addquestion';
+import { AuthProvider } from './component/AuthContext';
 
 
 
@@ -21,21 +22,21 @@ class App extends Component{
         {/* <div className='fixed-top'><ResponsiveAppBar/></div> */}
         {/* <Login/> */}
         {/* <DashBoard/> */}
-        
-        <BrowserRouter>
-          <Routes>
-             
-             <Route path='/' element={<Login />}/>
-             <Route path='/subject' element={<Addquestion/>} />
-             <Route path='/home' element={<DashBoard/>} />
-             <Route path='/signup' element={<SignUp/>} />
-             <Route path='/login' element={<Login/>} />
-             <Route path='scorecard' element={<Scorecard/>} />
+        <AuthProvider>
+          <BrowserRouter>
+            <Routes>
+              <Route path='/' element={<Login />}/>
+              <Route path='/subject' element={<Addquestion/>} />
+              <Route path='/home' element={<DashBoard/>} />
+              <Route path='/signup' element={<SignUp/>} />
+              <Route path='/login' element={<Login/>} />
+              <Route path='/Quiz' element={<Quiz/>} />
 
-          </Routes>
+            </Routes>
       
       
-        </BrowserRouter>
+          </BrowserRouter>
+        </AuthProvider>
         
 
        
