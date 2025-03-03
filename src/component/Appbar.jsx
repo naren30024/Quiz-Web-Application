@@ -2,16 +2,24 @@ import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./pyth.css"; // Import the CSS file
 import LogoutIcon from '@mui/icons-material';
+import { useContext } from "react";
+import { AuthContext } from "./AuthContext";
 
 const ResponsiveNavbar = () => {
   const navigate = useNavigate();
-  const [username, setUsername] = useState("User");
+  // const [username, setUsername] = useState("User");
+  const {user} = useContext(AuthContext)
+  const [userData, setuserData] = useState(() => {
+    const storedData = localStorage.getItem('userData');
+    return storedData ? JSON.parse(storedData) : user;
+  });
+  
+  
 
   useEffect(() => {
-    const userData = JSON.parse(localStorage.getItem("datas"));
-    if (userData?.username) {
-      setUsername(userData.username);
-    }
+    localStorage.setItem('userData', JSON.stringify(user));
+    
+    
   }, []);
 
   const handleLogout = () => {
@@ -58,7 +66,7 @@ const ResponsiveNavbar = () => {
               <ul className="dropdown-menu" aria-labelledby="profileDropdown">
                 <li>
                   <span className="dropdown-item text-muted">
-                    <strong>{username}</strong>
+                    <strong>{userData.firstName} {userData.lastName}</strong>
                   </span>
                 </li>
               </ul>
