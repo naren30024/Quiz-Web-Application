@@ -58,27 +58,14 @@ export default function Login() {
         console.log(senddata)
         axios.post('http://localhost/php-react/register-login-php/login.php',senddata1).then((result)=>{
           console.log(result.data)
-          localStorage.setItem("datas",JSON.stringify(result.data));
-          let hell=JSON.parse(localStorage.getItem("datas"));
-          console.log(hell[2]);
+          
           
           if (result.status === 200){
             navigate('/home',{state:result.data});
             login(result.data)
-            localStorage.setItem('email',JSON.stringify(result.data.email));
-            localStorage.setItem('username',JSON.stringify((result.data.firstName+' '+result.data.lastName)));
-            console.log(JSON.parse(localStorage.getItem("email")));
-            console.log(JSON.parse(localStorage.getItem("usename")));
-            
-            
           }
           else{
-            
-            alert("invalid user");
-            
-            
-            
-            
+            alert("invalid user")
           }
     
         })
