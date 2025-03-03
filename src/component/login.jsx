@@ -3,8 +3,6 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
-//import FormControlLabel from '@mui/material/FormControlLabel';
-//import Checkbox from '@mui/material/Checkbox';
 import Link from '@mui/material/Link';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
@@ -14,6 +12,8 @@ import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { useNavigate, navigate } from 'react-router-dom';
 import axios from 'axios';
+import { AuthContext } from './AuthContext';
+import { useContext } from 'react';
 
 function Copyright(props) {
   
@@ -34,6 +34,7 @@ const theme = createTheme();
 
 export default function Login() {
   let navigate = useNavigate();
+  const {login} = useContext(AuthContext);
   const[user,setUser]=React.useState({email:'',password:''})
   const handleChange=(e)=>{
     setUser({...user,[e.currentTarget.name]: e.currentTarget.value});
@@ -45,6 +46,7 @@ export default function Login() {
       email: data.get('email'),
       password: data.get('password'),
     };
+    
     if (senddata["email"] === "" || senddata["password"] === ""){
       alert("please enter Credentails");
     }
@@ -61,7 +63,8 @@ export default function Login() {
           console.log(hell[2]);
           
           if (result.status === 200){
-            navigate('/home');
+            navigate('/home',{state:result.data});
+            login(result.data)
             localStorage.setItem('email',JSON.stringify(result.data.email));
             localStorage.setItem('username',JSON.stringify((result.data.firstName+' '+result.data.lastName)));
             console.log(JSON.parse(localStorage.getItem("email")));
