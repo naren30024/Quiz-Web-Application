@@ -1,72 +1,64 @@
-import axios from 'axios';
-import React, { useState,useEffect } from 'react'
-import ResponsiveAppBar from './Appbar';
-import "./pyth.css"
-
+import axios from "axios";
+import React, { useState, useEffect } from "react";
+import ResponsiveAppBar from "./Appbar";
+import "./pyth.css";
 
 const Scorecard = () => {
-    let user=[];
-    
-    const loaduser = async () =>{
-        const results= await axios.get('http://localhost/php-react/register-login-php/scorecard.php');
-        user=results.data;
-        localStorage.setItem("scorecard",JSON.stringify(results.data))
-        //console.log(results.data);
-        //console.log(user);
-        console.log(user);
-    };
-    //setUser(JSON.parse(localStorage.getItem("scorecard")));
-     const users=JSON.parse(localStorage.getItem("scorecard"));
-     console.log(users);
-    useEffect(() => {
-      loaduser();
-    
-      
-    }, []);
-    //setUser(JSON.parse(localStorage.getItem("scorecard")))
-    
-    
+  const [users, setUsers] = useState([]); // State to hold fetched data
+
+  // Fetch Data from API
+  const loadUsers = async () => {
+    try {
+      const response = await axios.get(
+        "http://localhost/php-react/register-login-php/scorecard.php"
+      );
+      setUsers(response.data); // Store in state
+      localStorage.setItem("scorecard", JSON.stringify(response.data));
+    } catch (error) {
+      console.error("Error fetching scorecard data:", error);
+    }
+  };
+
+  useEffect(() => {
+    loadUsers();
+  }, []);
 
   return (
     <>
-    <div className="fixed-top"><ResponsiveAppBar/></div>
-    <div>
-        <table className="table table-dark">
-  <thead>
-    <tr className='fixed'>
-      {/* <th scope="col">#</th> */}
-      <th scope="col">firstName</th>
-      <th scope="col">Attempts</th>
-      <th scope="col">Score</th>
-    </tr>
-  </thead>
-  <tbody>
-     {users.map((res)=> 
-     <tr>
-      <th scope="row">1</th>
-      <td>{res.firstname}</td>
-      <td>{res.attempts}</td>
-      <td>{res.score}</td>
-    </tr> 
-      )}   
-    {/* <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Larry</td>
-      <td>the Bird</td>
-      <td>@twitter</td>
-    </tr> */}
-  </tbody>
-</table>
-      
-    </div>
+      <div style={{marginBottom:"25px"}} className="fixed-top">
+        <ResponsiveAppBar />
+      </div>
+      <div style={{marginTop:"30rem"}} className="container mt-5">
+        
+        <table className="table table-dark table-striped">
+          <thead>
+            <tr>
+              <th scope="col">First Name</th>
+              <th scope="col">Attempts</th>
+              <th scope="col">Score</th>
+            </tr>
+          </thead>
+          <tbody>
+            {users.length > 0 ? (
+              users.map((res, index) => (
+                <tr key={index}>
+                  <td>{res.firstname}</td>
+                  <td>{res.Attempts}</td>
+                  <td>{res.Score}</td>
+                </tr>
+              ))
+            ) : (
+              <tr>
+                <td colSpan="3" className="text-center">
+                  No Data Available
+                </td>
+              </tr>
+            )}
+          </tbody>
+        </table>
+      </div>
     </>
-  )
-}
+  );
+};
 
-export default Scorecard
+export default Scorecard;

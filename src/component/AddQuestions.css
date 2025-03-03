@@ -1,0 +1,36 @@
+.select-subject{
+    border-radius: 5px;
+    font-weight: 700;
+    color: rgb(28, 169, 173);
+}
+.add-question{
+    border-radius: 10px;
+    height: 50px;
+    color: rgb(128, 10, 10);
+    font-weight: 500;
+}
+.options{
+    border-radius: 10px;
+    height: 50px;
+    color: rgb(46, 96, 146);
+    font-weight: 500;
+}
+.Add-task-button{
+    border-radius: 10px;
+    background-color: rgb(210, 127, 48);
+    font-weight: bolder;
+    font-size: 25px;
+    color: white;
+    height: 50px;
+    width: 200px;
+    
+}
+/*label*/
+.options-label{
+    color: rgb(205, 155, 74);
+    font-size: 20px;
+}
+.correct-option{
+    color: rgb(21, 145, 106);
+    font-size: 20px;
+}

@@ -3,7 +3,7 @@
 }
 
 .pyth{
-    background: url("D:\reac\reactfirst\src\images\qizbg.jpg");
+    background: url("D:\myquiz\reactfirst\src\images\dashboard_baground.jpeg");
     background-repeat: no-repeat;
     background-size: cover;
     width: 100vw;
@@ -136,6 +136,7 @@ li{
 .subjects{
     text-align: center;
     padding-top: 80px;
+    
 
 }
 .subject{
@@ -261,7 +262,7 @@ Link{
     opacity: 0.6;
 }
 .quizin{
-    background: url("D:\reac\reactfirst\src\images\quizinh.jpg");
+    background: url("D:\myquiz\reactfirst\src\images\dashboard_baground2.jpeg");
     background-repeat: no-repeat;
     background-size: cover;
     width: 100vw;
@@ -356,7 +357,7 @@ Link{
     }
             
 }*/
-@media (min-width: 768px) {
+@media (min-width: 851px) and (max-width: 1024) {
     .pyth{
         background: url("https://sklc-tinymce-2021.s3.amazonaws.com/comp/2022/03/Rise%20of%20Python%20for%20Embedded%20Systems%201_1648655487.jpg");
         background-repeat: no-repeat;
@@ -400,7 +401,7 @@ Link{
     }
             
 }
-@media (min-width: 320px) {
+@media (min-width: 320px) and (max-width: 850px){
     .subjects{
         text-align: center;
         padding-top: 80px;
@@ -564,4 +565,27 @@ Link{
         
       }
             
+}
+
+/*navbar */
+
+.navbar {
+    padding: 5px 10px; 
+    margin-bottom: 20px;
+}
+  
+.navbar-brand {
+    font-size: 1.2rem; 
+}
+  
+.navbar-nav .nav-link {
+    padding: 8px 12px; 
+}
+  
+  /* Ensure proper spacing on smaller screens */
+@media (min-width: 992px) {
+    .navbar {
+      height: 65px;
+      padding: 10px 15px; 
+    }
 }

@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import "./pyth.css";
+import "./AddQuestions.css";
 import AddIcon from '@mui/icons-material/Add';
 import axios from 'axios';
 import ResponsiveAppBar from './Appbar';
+
 
 
 
@@ -201,7 +203,7 @@ export default function Addquestion(data) {
       <h1 className=' m-4'>ADDING QUESTIONS</h1>
       <div className='q1 row '>
         <label htmlFor="subject" ><b> Select a subject </b></label>
-        <select  name="subject" onChange={handleChange} id="select-box">
+        <select className='select-subject'  name="subject" onChange={handleChange} id="select-box">
           <option value="select">select</option>
           <option value="os">Operating System</option>
           <option value="ai">Artificial Intelligence</option>
@@ -223,8 +225,8 @@ export default function Addquestion(data) {
       <div>
         <div className='' >
           <div className='q1 row'>
-            <label htmlFor="question" ><b>Question</b></label>
-            <input type="text" name="question" onChange={handleChange} value={datas.question} className='col-l-8' />
+            <label style={{color:"maroon",fontSize:"20px"}} htmlFor="question" ><b>Question</b></label>
+            <input  type="text" name="question" onChange={handleChange} value={datas.question} className='col-l-8 add-question' />
           </div>
         </div>
         
@@ -232,30 +234,30 @@ export default function Addquestion(data) {
           
       </div>
       <div className='m-1'>
-        <label htmlFor="option1"><b>Option1</b></label>
+        <label className='options-label' htmlFor="option1"><b>Option1</b></label>
         <div className='q1 row'>
-        <input type="text" name="op1" onChange={handleChange} value={datas.op1} />
+        <input className='options' type="text" name="op1" onChange={handleChange} value={datas.op1} />
         
         
         </div>
       </div>
       <div className=' q1 row '>
-      <label htmlFor="option1"><b>Option2</b></label>
-        <input type="text" name="op2" onChange={handleChange} value={datas.op2} />
+      <label className='options-label' htmlFor="option1"><b>Option2</b></label>
+        <input className='options' type="text" name="op2" onChange={handleChange} value={datas.op2} />
         
       </div>
       <div className=' q1 row'>
-      <label htmlFor="option1"><b>Option3</b></label>
-        <input type="text" name="op3" onChange={handleChange} value={datas.op3} />
+      <label className='options-label' htmlFor="option1"><b>Option3</b></label>
+        <input className='options' type="text" name="op3" onChange={handleChange} value={datas.op3} />
        
       </div>
       <div className=' q1 row'>
-      <label htmlFor="option1"><b>Option4</b></label>
-        <input type="text" name="op4" onChange={handleChange} value={datas.op4} />
+      <label className='options-label'  htmlFor="option1"><b>Option4</b></label>
+        <input className='options' type="text" name="op4" onChange={handleChange} value={datas.op4} />
         
       <div className='select-wrap q1 row'>
-        <label htmlFor="correct" ><b> Select correct option </b></label>
-        <select  name="cor" onChange={handleChange} id="select-box" >
+        <label className='correct-option' htmlFor="correct" ><b> Select correct option </b></label>
+        <select className='select-subject'  name="cor" onChange={handleChange} id="select-box" >
           <option value="select">select</option>
           <option value="answer1">option1</option>
           <option value="answer2">option2</option>
@@ -267,7 +269,7 @@ export default function Addquestion(data) {
       </div>
       <div className='add'>
         <div className=' row subadd'>
-        <input type="submit" name="add" value="Add"/>
+        <input className='Add-task-button' type="submit" name="add" value="ADD"/>
         </div>
       </div>
         

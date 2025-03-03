@@ -7,7 +7,7 @@ import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import SignUp from './component/signup';
 import { BrowserRouter,Route,Routes } from 'react-router-dom';
 import Quiz from './component/Quiz';
-import QuesandAns from './component/q&a';
+import QuesandAns from './component/QuestionAnswer';
 import Scorecard from './component/scorecard';
 import Addquestion from './component/addquestion';
 
@@ -19,6 +19,9 @@ class App extends Component{
       <>
         
         {/* <div className='fixed-top'><ResponsiveAppBar/></div> */}
+        {/* <Login/> */}
+        {/* <DashBoard/> */}
+        
         <BrowserRouter>
           <Routes>
              

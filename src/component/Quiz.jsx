@@ -9,7 +9,7 @@ import HomeIcon from '@mui/icons-material/Home';
 import { Avatar, useEventCallback } from "@mui/material";
 import { LaptopWindows } from "@mui/icons-material";
 import axios from "axios";
-import QuesandAns from "./q&a";
+import QuesandAns from "./QuestionAnswer";
 
 function Quiz({subj,attempt}){
     const [questionNumber, setQuestionNumber]= useState(1);
