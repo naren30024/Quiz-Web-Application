@@ -43,8 +43,8 @@ const Scorecard = () => {
               users.map((res, index) => (
                 <tr key={index}>
                   <td>{res.firstname}</td>
-                  <td>{res.Attempts}</td>
-                  <td>{res.Score}</td>
+                  <td>{res.attempts}</td>
+                  <td>{res.score}</td>
                 </tr>
               ))
             ) : (
