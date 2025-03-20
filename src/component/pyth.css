@@ -3,7 +3,7 @@
 }
 
 .pyth{
-    background: url("D:\myquiz\reactfirst\src\images\dashboard_baground.jpeg");
+    background: url("D:\myquiz\reactfirst\src\component\images\dashboard_baground.jpeg");
     background-repeat: no-repeat;
     background-size: cover;
     width: 100vw;
@@ -140,11 +140,14 @@ li{
 
 }
 .subject{
-    border-radius: 20px;
-    border:10px solid black;
+    background-color: rgb(238, 241, 244);
+    border-radius: 10px 20px 5px 20px;
+    border:5px solid rgb(5, 50, 98);
     font-size: 30px;
     cursor: pointer;
     text-decoration: none;
+    width: 100px;
+    
 
 }
 .python{
@@ -258,11 +261,12 @@ Link{
 .cont{
     align-items: center;
     justify-content: center;
-    background-color: bisque;
+    
     opacity: 0.6;
 }
 .quizin{
-    background: url("D:\myquiz\reactfirst\src\images\dashboard_baground2.jpeg");
+    /* background: url("D:\myquiz\reactfirst\src\component\images\dashboard_baground2.jpeg"); */
+    background-color: #022c18;
     background-repeat: no-repeat;
     background-size: cover;
     width: 100vw;
@@ -283,7 +287,7 @@ Link{
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center center;
+    background-position: center;
     height: 100%;
     width: 100%;
   }
@@ -473,7 +477,7 @@ Link{
         text-align: center;
         justify-content: space-around;
         padding-top: 80px;
-        padding-left: 0px;
+        
     
     }
     .top{
@@ -555,7 +559,7 @@ Link{
         margin-left: 20%;
         align-items: center;
         justify-content: center;
-        background-color: aqua;
+        
     }
     .add{
         padding-left: 32%;
